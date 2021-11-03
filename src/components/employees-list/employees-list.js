@@ -5,9 +5,15 @@ const EmployeesList = ({data}) => {
 
   const elements = data.map(item => {
     return (
-      <EmployeesListItem name={item.name} surname={item.surname} salary={item.salary} increase={item.increase}/>
+      <EmployeesListItem key={item.id}
+                         name={item.name} 
+                         surname={item.surname} 
+                         salary={item.salary} 
+                         increase={item.increase}/>
     )
   })
+
+  console.log(elements)
 
   return(
     <ul className="app-list list-group">
@@ -17,3 +23,6 @@ const EmployeesList = ({data}) => {
 }
 
 export default EmployeesList;
+
+
+// АЛГОРИТМ РЕКОНЦЕЛЯЦІЇ (сверка)
