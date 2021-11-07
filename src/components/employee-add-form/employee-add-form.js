@@ -18,11 +18,14 @@ class EmployeeAddForm extends Component{
 
   addItem = (e) => {
     e.preventDefault();
-    this.props.onAdd(this.state.name, this.state.salary);
-    this.setState({
-      name: '',
-      salary: '',
-    })
+    let {name, salary} = this.state;
+    if (name.length > 2 && salary != '') {
+      this.props.onAdd(this.state.name, this.state.salary);
+      this.setState({
+        name: '',
+        salary: '',
+      })
+    }
   }
 
   render() {
